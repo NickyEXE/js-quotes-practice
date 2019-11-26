@@ -101,6 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let quoteCard = e.target.parentElement
             quoteCard.querySelector("p").innerText = res.quote
             quoteCard.querySelector(".blockquote-footer").innerText = res.author
+            e.target.style.display === "none" ? e.target.style.display = "block" : e.target.style.display = "none"
         }
     }
 
