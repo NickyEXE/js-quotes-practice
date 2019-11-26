@@ -27,11 +27,10 @@ adapter = {
     },
     patch: (id, body) => {
         return fetch(`http://localhost:3000/quotes/${id}`, {
-        method: "PATCH",
-        headers: {"content-type": "application/json"},
-        body: JSON.stringify(body)
-    })
-    .then(res => res.json())
+            method: "PATCH",
+            headers: {"content-type": "application/json"},
+            body: JSON.stringify(body)
+        })
+        .then(res => res.json())
     }
-
 }

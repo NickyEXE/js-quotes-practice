@@ -89,12 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const quote = e.target["new-quote"].value
         const author = e.target["author"].value
         const id = parseInt(e.target.parentElement.dataset.id)
-        fetch(`http://localhost:3000/quotes/${id}`, {
-            method: "PATCH",
-            headers: {"content-type": "application/json"},
-            body: JSON.stringify({quote: quote, author: author})
-        })
-        .then(res => res.json())
+        adapter.patch(id, {quote: quote, author: author})
         .then(res => updateOnDOM(res))
 
         function updateOnDOM(res){
